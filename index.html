@@ -26,7 +26,13 @@ body {
 <script>
 const pageFlip = new St.PageFlip(
   document.getElementById("book"),
-  { width: 1000, height: 1400, showCover: true }
+  {
+  width: 900,
+  height: 1400,
+  size: "stretch",
+  showCover: true,
+  autoSize: true
+}
 );
 
 pageFlip.loadFromImages([
@@ -43,4 +49,5 @@ pageFlip.loadFromImages([
 </script>
 </body>
 </html>
+
 
