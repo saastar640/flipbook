@@ -2,23 +2,31 @@
 <html>
 <body>
 <style>
-html, body {
+body {
   margin: 0;
   min-height: 100vh;
+  display: flex;
+  align-items: center;     /* vertical center */
+  justify-content: center; /* horizontal center */
   background: #212121;
 }
-
 body {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 #book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: min(1000px, 92vw);
-  height: min(1400px, 88vh);
+  height: min(1400px, 90vh);
   margin: auto;
 }
+#book {
+  width: min(1000px, 92vw);
+  height: min(1400px, 90vh);
+  box-shadow: 0 0px 0px 
 </style>
 <div id="book"></div>
 
@@ -26,7 +34,7 @@ body {
 <script>
 const pageFlip = new St.PageFlip(
   document.getElementById("book"),
-  { width: 900, height: 1400, showCover: true }
+  { width: 1000, height: 1400, showCover: true }
 );
 
 pageFlip.loadFromImages([
@@ -43,6 +51,3 @@ pageFlip.loadFromImages([
 </script>
 </body>
 </html>
-
-
-
