@@ -6,48 +6,52 @@
   <title>Flipbook</title>
 
   <style>
-    html, body {
-      margin: 0;
-      height: 100%;
-      background: #212121;
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #212121;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    box-sizing: border-box;
+  }
+
+  /* FINAL SIZE SKETCH */
+  #book {
+    height: 660px;                 /* ✅ sweet spot for 1440p */
+    width: min(940px, 92vw);       /* proportional width */
+    box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  }
+
+  /* Mobile fix */
+  @media (max-width: 768px) {
+    #book {
+      height: 80vh;
+      width: 94vw;
     }
+  }
+</style>
 
-    body{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px;
-      box-sizing: border-box;
-    }
+<div id="book"></div>
 
-    /* container size (controls how big it looks) */
-    #book{
-      width: min(900px, 90vw);
-      height: min(650px, 85vh);
-      box-shadow: 0 20px 60px rgba(0,0,0,.6);
-    }
-  </style>
-</head>
-
-<body>
-  <div id="book"></div>
-
-  <script src="./page-flip.browser.js"></script>
-  <script>
-    const el = document.getElementById("book");
-
-    // If this logs "undefined", your JS file is not loading (path/filename issue)
-    console.log("St.PageFlip =", window.St && window.St.PageFlip);
-
-    const pageFlip = new St.PageFlip(el, {
+<script src="page-flip.browser.js"></script>
+<script>
+  const pageFlip = new St.PageFlip(
+    document.getElementById("book"),
+    {
       width: 1000,
       height: 1400,
-      size: "fixed",
+      size: "stretch",
       autoSize: true,
       showCover: true,
       usePortrait: true
-    });
-
+    }
+  );
+  
     pageFlip.loadFromImages([
       "pages/1.jpg","pages/2.jpg","pages/3.jpg","pages/4.jpg","pages/5.jpg",
       "pages/6.jpg","pages/7.jpg","pages/8.jpg","pages/9.jpg","pages/10.jpg",
@@ -61,4 +65,5 @@
   </script>
 </body>
 </html>
+
 
