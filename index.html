@@ -1,60 +1,57 @@
 <!doctype html>
 <html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flipbook</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #212121;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+    }
+
+    /* Flipbook container */
+    #book {
+      max-width: 1000px;
+      width: 92vw;
+      height: 80vh;
+    }
+  </style>
+</head>
+
 <body>
-<style>
-html, body {
-  margin: 0;
-  height: 100%;
-  background: #212121;
-  overflow: hidden;
-}
+  <div id="book"></div>
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 0;
-}
+  <script src="page-flip.browser.js"></script>
+  <script>
+    const pageFlip = new St.PageFlip(document.getElementById("book"), {
+      width: 900,
+      height: 1400,
+      size: "stretch",
+      autoSize: true,
+      showCover: true
+    });
 
-/* Flipbook container */
-#book {
-  max-width: 1000px;
-  width: 92vw;
-  height: 80vh;
-}
-</style>
-
-<div id="book"></div>
-
-<script src="page-flip.browser.js"></script>
-<script>
-const pageFlip = new St.PageFlip(document.getElementById("book"), {
-  width: 900,
-  height: 1400,
-  size: "stretch",
-  autoSize: true,
-  showCover: true
-});
-  
-pageFlip.loadFromImages([
-  "pages/1.jpg","pages/2.jpg","pages/3.jpg","pages/4.jpg","pages/5.jpg",
-  "pages/6.jpg","pages/7.jpg","pages/8.jpg","pages/9.jpg","pages/10.jpg",
-  "pages/11.jpg","pages/12.jpg","pages/13.jpg","pages/14.jpg","pages/15.jpg",
-  "pages/16.jpg","pages/17.jpg","pages/18.jpg","pages/19.jpg","pages/20.jpg",
-  "pages/21.jpg","pages/22.jpg","pages/23.jpg","pages/24.jpg","pages/25.jpg",
-  "pages/26.jpg","pages/27.jpg","pages/28.jpg","pages/29.jpg","pages/30.jpg",
-  "pages/31.jpg","pages/32.jpg","pages/33.jpg","pages/34.jpg","pages/35.jpg",
-  "pages/36.jpg"
-]);
-</script>
-
-</script>
+    pageFlip.loadFromImages([
+      "pages/1.jpg","pages/2.jpg","pages/3.jpg","pages/4.jpg","pages/5.jpg",
+      "pages/6.jpg","pages/7.jpg","pages/8.jpg","pages/9.jpg","pages/10.jpg",
+      "pages/11.jpg","pages/12.jpg","pages/13.jpg","pages/14.jpg","pages/15.jpg",
+      "pages/16.jpg","pages/17.jpg","pages/18.jpg","pages/19.jpg","pages/20.jpg",
+      "pages/21.jpg","pages/22.jpg","pages/23.jpg","pages/24.jpg","pages/25.jpg",
+      "pages/26.jpg","pages/27.jpg","pages/28.jpg","pages/29.jpg","pages/30.jpg",
+      "pages/31.jpg","pages/32.jpg","pages/33.jpg","pages/34.jpg","pages/35.jpg",
+      "pages/36.jpg"
+    ]);
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
