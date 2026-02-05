@@ -19,8 +19,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: min(600px, 80vw);    /* NOT edge-to-edge */
-  height: min(800px, 90vh);
+  width: min(800px, 80vw);    /* NOT edge-to-edge */
+  height: min(1120px, 90vh);
   margin: auto;
   box-shadow: 0 20px 60px rgba(0,0,0,.6);
 }
@@ -32,7 +32,7 @@ body {
 <script>
 const pageFlip = new St.PageFlip(
   document.getElementById("book"),
-  { width: 1000, height: 1400, showCover: true }
+  { width: 800, height: 1120, showCover: true }
 );
 
 pageFlip.loadFromImages([
@@ -49,4 +49,5 @@ pageFlip.loadFromImages([
 
 </body>
 </html>
+
 
