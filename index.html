@@ -24,33 +24,51 @@
       height: min(1400px, 85vh);
       max-width: 1000px;
     }
-  </style>
-<div id="book"></div>
 
-<script src="page-flip.browser.js"></script>
-<script>
-const pageFlip = new St.PageFlip(document.getElementById("book"), {
+    /* Kill white “page padding” inside flip */
+    .stf__parent,
+    .stf__wrapper,
+    .stf__block,
+    .stf__item {
+      background: #212121 !important;
+    }
+
+    @media (max-width: 768px) {
+      #book {
+        width: 94vw;
+        height: 85vh;
+        max-width: 94vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="book"></div>
+
+  <script src="page-flip.browser.js"></script>
+  <script>
+    const pageFlip = new St.PageFlip(document.getElementById("book"), {
       width: 900,
       height: 1400,
       size: "stretch",
       autoSize: true,
       showCover: true,
-      usePortrait: true
+      mobileScrollSupport: false,
+      useMouseEvents: true,
+      maxShadowOpacity: 0.2
     });
 
-pageFlip.loadFromImages([
-  "pages/1.jpg","pages/2.jpg","pages/3.jpg","pages/4.jpg","pages/5.jpg",
-  "pages/6.jpg","pages/7.jpg","pages/8.jpg","pages/9.jpg","pages/10.jpg",
-  "pages/11.jpg","pages/12.jpg","pages/13.jpg","pages/14.jpg","pages/15.jpg",
-  "pages/16.jpg","pages/17.jpg","pages/18.jpg","pages/19.jpg","pages/20.jpg",
-  "pages/21.jpg","pages/22.jpg","pages/23.jpg","pages/24.jpg","pages/25.jpg",
-  "pages/26.jpg","pages/27.jpg","pages/28.jpg","pages/29.jpg","pages/30.jpg",
-  "pages/31.jpg","pages/32.jpg","pages/33.jpg","pages/34.jpg","pages/35.jpg",
-  "pages/36.jpg"
-]);
-
-</script>
+    pageFlip.loadFromImages([
+      "pages/1.jpg","pages/2.jpg","pages/3.jpg","pages/4.jpg","pages/5.jpg",
+      "pages/6.jpg","pages/7.jpg","pages/8.jpg","pages/9.jpg","pages/10.jpg",
+      "pages/11.jpg","pages/12.jpg","pages/13.jpg","pages/14.jpg","pages/15.jpg",
+      "pages/16.jpg","pages/17.jpg","pages/18.jpg","pages/19.jpg","pages/20.jpg",
+      "pages/21.jpg","pages/22.jpg","pages/23.jpg","pages/24.jpg","pages/25.jpg",
+      "pages/26.jpg","pages/27.jpg","pages/28.jpg","pages/29.jpg","pages/30.jpg",
+      "pages/31.jpg","pages/32.jpg","pages/33.jpg","pages/34.jpg","pages/35.jpg",
+      "pages/36.jpg"
+    ]);
+  </script>
 </body>
 </html>
-
-
