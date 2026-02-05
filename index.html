@@ -4,34 +4,39 @@
 <style>
 html, body {
   margin: 0;
-  min-height: 100vh;
+  height: 100%;
   background: #212121;
+  overflow: hidden;
 }
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;   /* breathing space like local */
+  padding: 40px 0;
 }
 
 /* Flipbook container */
 #book {
-  max-width: 1100px;   /* controls overall size */
-  width: 90vw;         /* responsive */
-  height: 80vh;        /* not fullscreen */
-  margin: auto;
+  max-width: 1100px;
+  width: 92vw;
+  height: 80vh;
 }
 </style>
+
 <div id="book"></div>
 
 <script src="page-flip.browser.js"></script>
 <script>
-const pageFlip = new St.PageFlip(
-  document.getElementById("book"),
-  { width: 1000, height: 1200, showCover: true }
-);
-
+const pageFlip = new St.PageFlip(document.getElementById("book"), {
+  width: 900,
+  height: 1400,
+  size: "stretch",
+  autoSize: true,
+  showCover: true
+});
+</script>
+  
 pageFlip.loadFromImages([
   "pages/1.jpg","pages/2.jpg","pages/3.jpg","pages/4.jpg","pages/5.jpg",
   "pages/6.jpg","pages/7.jpg","pages/8.jpg","pages/9.jpg","pages/10.jpg",
@@ -46,6 +51,7 @@ pageFlip.loadFromImages([
 </script>
 </body>
 </html>
+
 
 
 
