@@ -38,14 +38,14 @@ body {
 
 <script src="page-flip.browser.js"></script>
 <script>
-const pageFlip = new St.PageFlip(
-   document.getElementById("book"),
-  {
-    width: 700,
-    height: 974,
-    autoSize: true,
-    showCover: true
-  }
+const pageFlip = new St.PageFlip(document.getElementById("book"), {
+  width: 1000,
+  height: 1400,
+  size: "fixed",
+  autoSize: true,
+  showCover: true,
+  usePortrait: true
+});
 );
 
 pageFlip.loadFromImages([
@@ -62,6 +62,7 @@ pageFlip.loadFromImages([
 
 </body>
 </html>
+
 
 
 
