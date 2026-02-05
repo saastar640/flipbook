@@ -29,10 +29,14 @@
 
 <script src="page-flip.browser.js"></script>
 <script>
-const pageFlip = new St.PageFlip(
-  document.getElementById("book"),
-  { width: 1000, height: 1400, showCover: true }
-);
+const pageFlip = new St.PageFlip(document.getElementById("book"), {
+      width: 900,
+      height: 1400,
+      size: "stretch",
+      autoSize: true,
+      showCover: true,
+      usePortrait: true
+    });
 
 pageFlip.loadFromImages([
   "pages/1.jpg","pages/2.jpg","pages/3.jpg","pages/4.jpg","pages/5.jpg",
@@ -48,4 +52,5 @@ pageFlip.loadFromImages([
 </script>
 </body>
 </html>
+
 
