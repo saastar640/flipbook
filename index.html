@@ -1,74 +1,63 @@
 <!doctype html>
-<html>
-<body>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flipbook</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #212121;
+    }
+
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      box-sizing: border-box;
+    }
+
+    /* container size (controls how big it looks) */
+    #book{
+      width: min(900px, 90vw);
+      height: min(650px, 85vh);
+      box-shadow: 0 20px 60px rgba(0,0,0,.6);
+    }
+  </style>
 </head>
-<style>
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #212121;
-  padding: 40px;              /* breathing space */
-  box-sizing: border-box;
-}
 
-/* Flipbook */
-#book {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: min(700px, 92vw);
-  height: min(974px, 80vh);
-  margin: auto;
-  box-shadow: 0 20px 60px rgba(0,0,0,.6);
-}
-#book canvas,
-#book img {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-}
-</style>
+<body>
+  <div id="book"></div>
 
-<div id="book"></div>
+  <script src="./page-flip.browser.js"></script>
+  <script>
+    const el = document.getElementById("book");
 
-<script src="page-flip.browser.js"></script>
-<script>
-const pageFlip = new St.PageFlip(document.getElementById("book"), {
-  width: 1000,
-  height: 1400,
-  size: "fixed",
-  autoSize: true,
-  showCover: true,
-  usePortrait: true
-});
-);
+    // If this logs "undefined", your JS file is not loading (path/filename issue)
+    console.log("St.PageFlip =", window.St && window.St.PageFlip);
 
-pageFlip.loadFromImages([
-  "pages/1.jpg","pages/2.jpg","pages/3.jpg","pages/4.jpg","pages/5.jpg",
-  "pages/6.jpg","pages/7.jpg","pages/8.jpg","pages/9.jpg","pages/10.jpg",
-  "pages/11.jpg","pages/12.jpg","pages/13.jpg","pages/14.jpg","pages/15.jpg",
-  "pages/16.jpg","pages/17.jpg","pages/18.jpg","pages/19.jpg","pages/20.jpg",
-  "pages/21.jpg","pages/22.jpg","pages/23.jpg","pages/24.jpg","pages/25.jpg",
-  "pages/26.jpg","pages/27.jpg","pages/28.jpg","pages/29.jpg","pages/30.jpg",
-  "pages/31.jpg","pages/32.jpg","pages/33.jpg","pages/34.jpg","pages/35.jpg",
-  "pages/36.jpg"
-]);
-</script>
+    const pageFlip = new St.PageFlip(el, {
+      width: 1000,
+      height: 1400,
+      size: "stretch",
+      autoSize: true,
+      showCover: true,
+      usePortrait: true
+    });
 
+    pageFlip.loadFromImages([
+      "pages/1.jpg","pages/2.jpg","pages/3.jpg","pages/4.jpg","pages/5.jpg",
+      "pages/6.jpg","pages/7.jpg","pages/8.jpg","pages/9.jpg","pages/10.jpg",
+      "pages/11.jpg","pages/12.jpg","pages/13.jpg","pages/14.jpg","pages/15.jpg",
+      "pages/16.jpg","pages/17.jpg","pages/18.jpg","pages/19.jpg","pages/20.jpg",
+      "pages/21.jpg","pages/22.jpg","pages/23.jpg","pages/24.jpg","pages/25.jpg",
+      "pages/26.jpg","pages/27.jpg","pages/28.jpg","pages/29.jpg","pages/30.jpg",
+      "pages/31.jpg","pages/32.jpg","pages/33.jpg","pages/34.jpg","pages/35.jpg",
+      "pages/36.jpg"
+    ]);
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
